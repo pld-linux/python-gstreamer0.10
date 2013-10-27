@@ -1,19 +1,18 @@
-%define		pname	gst-python
-Summary:	GStreamer Python bindings
-Summary(pl.UTF-8):	Wiązania języka Python do GStreamera
-Name:		python-gstreamer
+Summary:	GStreamer 0.10 Python bindings
+Summary(pl.UTF-8):	Wiązania języka Python do GStreamera 0.10
+Name:		python-gstreamer0.10
 Version:	0.10.22
 Release:	2
 License:	LGPL v2+
 Group:		Libraries/Python
-Source0:	http://gstreamer.freedesktop.org/src/gst-python/%{pname}-%{version}.tar.bz2
+Source0:	http://gstreamer.freedesktop.org/src/gst-python/gst-python-%{version}.tar.bz2
 # Source0-md5:	937152fe896241f827689f4b53e79b22
 URL:		http://gstreamer.freedesktop.org/modules/gst-python.html
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	glib2-devel >= 1:2.8.0
-BuildRequires:	gstreamer-devel >= 0.10.32
-BuildRequires:	gstreamer-plugins-base-devel >= 0.10.32
+BuildRequires:	gstreamer0.10-devel >= 0.10.32
+BuildRequires:	gstreamer0.10-plugins-base-devel >= 0.10.32
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	libtool >= 1.4
 BuildRequires:	pkgconfig >= 1:0.9.0
@@ -22,33 +21,34 @@ BuildRequires:	python-pygobject-devel >= 2.15.0
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 Requires:	glib2 >= 1:2.8.0
-Requires:	gstreamer >= 0.10.32
-Requires:	gstreamer-plugins-base >= 0.10.32
+Requires:	gstreamer0.10 >= 0.10.32
+Requires:	gstreamer0.10-plugins-base >= 0.10.32
 Requires:	python-pygobject >= 2.15.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GStreamer Python bindings.
+GStreamer 0.10 Python bindings.
 
 %description -l pl.UTF-8
-Wiązania języka Python do GStreamera.
+Wiązania języka Python do GStreamera 0.10.
 
 %package devel
-Summary:	Development files and examples for GStreamer Python bindings
-Summary(pl.UTF-8):	Pliki programistyczne i przykłady dla wiązań Pythona do GStreamera
+Summary:	Development files and examples for GStreamer 0.10 Python bindings
+Summary(pl.UTF-8):	Pliki programistyczne i przykłady dla wiązań Pythona do GStreamera 0.10
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	gstreamer-devel >= 0.10.32
+Requires:	gstreamer0.10-devel >= 0.10.32
 Requires:	python-pygobject-devel >= 2.15.0
 
 %description devel
-Development files and examples for GStreamer Python bindings.
+Development files and examples for GStreamer 0.10 Python bindings.
 
 %description devel -l pl.UTF-8
-Pliki programistyczne i przykłady dla wiązań Pythona do GStreamera.
+Pliki programistyczne i przykłady dla wiązań Pythona do GStreamera
+0.10.
 
 %prep
-%setup -q -n %{pname}-%{version}
+%setup -q -n gst-python-%{version}
 
 %build
 %{__libtoolize}
